@@ -11,7 +11,7 @@ const main = async () => {
       output: process.stdout,
     });
     const SwapProxy = await ethers.getContractFactory("SwapProxy");
-    const SP = await SwapProxy.deploy("0x11111112542D85B3EF69AE05771c2dCCff4fAa26");
+    const SP = await SwapProxy.deploy("0x1111111254fb6c44bAC0beD2854e76F90643097d");
     await SP.deployed();
     console.log("contract deployed to "+SP.address);
     const acc="0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
@@ -24,10 +24,11 @@ const main = async () => {
     let chain_id = "1";
     try{
       //using quote not swap to find slipage and then swap
-      const response = await axios.get(`https://api.1inch.exchange/v3.0/${chain_id}/quote?fromTokenAddress=${token_in}&toTokenAddress=${token_out}&amount=${amount}`);
+      const response = await axios.get(`https://api.1inch.exchange/v4.0/${chain_id}/swap?fromTokenAddress=${token_in}&toTokenAddress=${token_out}&amount=${amount}&fromAddress=${SP.address}&slippage=${slippage}&destReceiver=${acc}&disableEstimate=true`);
       if(response.data){
 
           data = response.data;
+          let tx=data.tx.data;
         console.log("quote Successfull! :)");
         console.log(data);
         let min_res = parseInt(data.toTokenAmount) * (100-slippage)/100;
@@ -35,7 +36,7 @@ const main = async () => {
         
           let balance = await ethers.provider.getBalance(acc);
           console.log("balance: "+balance);
-          let input = "";
+          let input = "y";
 
 // question user to enter name
           rl.question('are you sure?\n', name => {
@@ -44,7 +45,7 @@ const main = async () => {
           });
           if(input=="y"){
             console.log("swapping...");
-
+            SP.swap(min_res,tx,{'from':acc});
             console.log("swap successfull! :)");
           }
           else{
