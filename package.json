@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.5.0",
-    "axios": "^0.26.1"
+    "axios": "^0.26.1",
+    "web3": "^1.7.1"
   }
 }
