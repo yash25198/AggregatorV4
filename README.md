@@ -10,6 +10,7 @@ The test had hardcoded addresses which can be changed.
 ## Installations
 ```
 git clone https://github.com/yash25198/1inch
+cd 1inch
 npm init -y
 npm install --save-dev hardhat
 npm install web3
