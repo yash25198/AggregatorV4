@@ -18,27 +18,24 @@ npm install web3
 - For swapping `default tokens`
 
   - Use the following command to start the local mainnet fork.
-  
-  
-  ```
-  npx hardhat node --fork https://eth-mainnet.alchemyapi.io/v2/FGRXFwpdQxk6MNS2gGt1J7CputsW0EYo
-  ```
+   
+    ```
+    npx hardhat node --fork https://eth-mainnet.alchemyapi.io/v2/FGRXFwpdQxk6MNS2gGt1J7CputsW0EYo
+    ```
   
   - Open a `new terminal window` for executing the next commands cause we dont want to mess up the terminal window that's keeping our local Ethereum network alive.
   
-  - Run the follow command to run `daiBalance.js` to initilize DAI balane in default accouts provided by HardHat( every account have 0 DAI initially ).
+  - Run the following command to run `daiBalance.js` to initilize DAI balane in default accouts provided by HardHat( every account have 0 DAI initially ).
   
-  
-  ```
-  npx hardhat run test/daiBalance.js --network localhost
-  ```
+    ```
+    npx hardhat run test/daiBalance.js --network localhost
+    ```
   
   - Run the next command to swap DAI Tokens in the account to 1Inch Tokens via 1Inch's Aggregator Protocol.
   
-  
-  ```
-  npx hardhat run test/sample-test.js --network localhost
-  ```
+    ```
+    npx hardhat run test/sample-test.js --network localhost
+    ```
   
   - Terminal will now contian the data from a GET query to 1Inch API and the best price and allowed slippage for the swap.
    
