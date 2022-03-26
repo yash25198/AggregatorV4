@@ -44,7 +44,7 @@ npm install web3
 
   - Change addresses of ERC20 Tokens in `sample-test.js` under test folder.
   
-  - Change Token address of required token in `daiBalance.js` under test folder
+  - Change Token address of required token in `daiBalance.js` under test folder.
   
   - Change addresses of Tokens in `SwapProxy.sol` in contracts folders.
 
