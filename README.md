@@ -1,7 +1,7 @@
 # 1inch Aggregator Protocol V4 Swap
 The smart contract SwapProxy can be used to trade over 1Inch, using their latest Aggregator Protocol V4.
 ## Testing Environment 
-The contract was tested on a mainnet fork using Alchemy API key
+The contract was tested on a mainnet fork using Alchemy API key on HardHat Runtime Environment.
 ## Test Run Results
 The test had hardcoded addresses which can be changed.
 
