@@ -9,7 +9,7 @@ The test had hardcoded addresses which can be changed.
 
 ## Installations
 ```
-git clone https://github.com/yash25198/1inch
+git clone https://github.com/yash25198/AggregatorV4
 cd 1inch
 npm init -y
 npm install --save-dev hardhat
