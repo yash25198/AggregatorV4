@@ -10,7 +10,7 @@ The test had hardcoded addresses which can be changed.
 ## Installations
 ```
 git clone https://github.com/yash25198/AggregatorV4
-cd 1inch
+cd AggregatorV4
 npm init -y
 npm install --save-dev hardhat
 npm install web3
