@@ -21,7 +21,7 @@ const main = async () => {
     };
     //await hre.run("compile");
     const Dai = new ethers.Contract(DAI_ADDRESS, ERC20ABI, ethers.provider);
-    const locallyManipulatedBalance = "100000000000000000000";
+    const locallyManipulatedBalance = "10000";
 
     const [user] = await ethers.getSigners();
     const userAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";

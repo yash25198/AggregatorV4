@@ -7,8 +7,8 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 contract SwapProxy is Ownable {
-    address public daiAddress= 0x6B175474E89094C44Da98b954EedeAC495271d0F;
-    address public inchAddress = 0x111111111117dC0aa78b770fA6A738034120C302 ;
+    address public daiAddress;
+    address public inchAddress;
 
     struct SwapDescription {
         IERC20 srcToken;
@@ -22,10 +22,14 @@ contract SwapProxy is Ownable {
     }
 
     address immutable AGGREGATION_ROUTER_V4;
-    IERC20 daiToken = IERC20(daiAddress);
-    IERC20 inchToken = IERC20(inchAddress);
-    constructor(address router) {
+    IERC20 daiToken;
+    IERC20 inchToken;
+    constructor(address router, address _daiAddress, address _inchAddress){
         AGGREGATION_ROUTER_V4 = router;
+        daiAddress = _daiAddress;
+        inchAddress = _inchAddress;
+        daiToken = IERC20(daiAddress);
+        inchToken = IERC20(inchAddress);
         
     }
     function approve(uint256 _amount) public {

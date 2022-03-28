@@ -38,7 +38,7 @@ const main = async () => {
   }
     
     const SwapProxy = await ethers.getContractFactory("SwapProxy");
-    const SP = await SwapProxy.deploy("0x1111111254fb6c44bAC0beD2854e76F90643097d");
+    const SP = await SwapProxy.deploy("0x1111111254fb6c44bAC0beD2854e76F90643097d","0x6B175474E89094C44Da98b954EedeAC495271d0F","0x111111111117dC0aa78b770fA6A738034120C302");
     await SP.deployed();
     console.log("contract deployed to "+SP.address);
     const acc="0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
@@ -46,7 +46,7 @@ const main = async () => {
     let token_in = "0x6B175474E89094C44Da98b954EedeAC495271d0F";
     //dai token address
     let token_out = "0x111111111117dC0aa78b770fA6A738034120C302";
-    let amount = "1000000000000";
+    let amount = "1000";
     let slippage = "10";
     let chain_id = "1";
     try{
